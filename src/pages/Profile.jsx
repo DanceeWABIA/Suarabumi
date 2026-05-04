@@ -2,13 +2,11 @@ import ProfileCard from '../components/ProfileCard';
 import StatsCard from '../components/StatsCard';
 import AchievementCard from '../components/AchievementCard';
 
-const Profile = () => {
+const Profile = ({ onLogout }) => { // 1. Tambahkan onLogout di sini
   return (
     <div className="min-h-screen bg-tunas-bg p-4 md:p-8 font-sans">
       <div className="max-w-6xl mx-auto bg-tunas-light rounded-[40px] shadow-sm overflow-hidden border border-gray-200/50">
         
-        {/* Navbar SUDAH DIHAPUS dari sini karena sudah ada di App.jsx secara global */}
-
         <main className="p-6 md:p-10">
           {/* Header Title & Actions */}
           <div className="flex items-center justify-between mb-8">
@@ -56,7 +54,6 @@ const Profile = () => {
 
             {/* Sidebar Settings & Tips */}
             <div className="space-y-6">
-              {/* Settings Card */}
               <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
                 <h4 className="font-bold text-base mb-6 text-tunas-dark">Pengaturan Akun</h4>
                 <div className="space-y-3">
@@ -70,7 +67,11 @@ const Profile = () => {
                     </button>
                   ))}
                   
-                  <button className="w-full p-4 bg-red-50 text-red-600 rounded-2xl text-[13px] font-bold mt-6 hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2">
+                  {/* 2. Hubungkan onLogout ke button ini */}
+                  <button 
+                    onClick={onLogout}
+                    className="w-full p-4 bg-red-50 text-red-600 rounded-2xl text-[13px] font-bold mt-6 hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2"
+                  >
                     🚪 Keluar Sesi
                   </button>
                 </div>
