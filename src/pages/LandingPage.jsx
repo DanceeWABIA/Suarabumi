@@ -1,4 +1,6 @@
 import React from 'react';
+// Pastikan path impor logo sesuai dengan struktur folder Anda
+import LogoDaurin from '../assets/Logo Daurin.jpeg'; 
 
 // Komponen Kecil untuk Kartu Fitur (Sesuai Brand Identity v1.0)
 const FeatureCard = ({ icon, title, desc }) => (
@@ -56,8 +58,15 @@ const LandingPage = ({ onLogin, onGoToRegister }) => {
       {/* 1. NAVBAR LANDING */}
       <nav className="flex justify-between items-center px-10 py-6 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#1A3022] rounded-full flex items-center justify-center text-white text-xs">🌱</div>
-          <span className="text-xl font-bold text-[#1A3022]">Tunas.</span>
+          {/* Penggantian Logo ke Image Melingkar */}
+          <img 
+            src={LogoDaurin} 
+            alt="Logo" 
+            className="w-8 h-8 rounded-full object-cover" 
+          />
+          <span className="text-xl font-bold text-[#1A3022]">
+            Daurin<span className="text-orange-500">.</span>
+          </span>
         </div>
         
         <div className="hidden md:flex gap-10 text-sm font-bold text-gray-500 tracking-wider">
@@ -97,7 +106,6 @@ const LandingPage = ({ onLogin, onGoToRegister }) => {
             Jadikan setiap sampah yang kamu pilah sebagai aksi nyata melawan perubahan iklim, dan dapatkan reward langsung ke e-wallet-mu.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-            {/* Perbaikan: Mengarahkan tombol "Mulai Sekarang" ke registrasi */}
             <button onClick={onGoToRegister} className="bg-[#FFB800] text-[#1A3022] font-black px-10 py-5 rounded-full text-sm hover:scale-105 transition-transform flex items-center justify-center gap-2 group">
               Mulai Sekarang <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
@@ -206,7 +214,6 @@ const LandingPage = ({ onLogin, onGoToRegister }) => {
           <p className="text-white/60 text-sm md:text-base mb-10 max-w-xl mx-auto font-medium">
             Gratis, mudah, dan dampaknya nyata. Bergabunglah bersama ribuan warga yang sudah bergerak untuk lingkungan.
           </p>
-          {/* Perbaikan: Menambahkan onClick pada tombol CTA bawah */}
           <button onClick={onGoToRegister} className="bg-[#EAB308] text-[#1A3022] px-10 py-4 rounded-xl font-bold text-sm hover:scale-105 transition-transform">
             Daftar Gratis
           </button>
@@ -216,15 +223,23 @@ const LandingPage = ({ onLogin, onGoToRegister }) => {
       {/* 9. FOOTER */}
       <footer className="bg-[#0F1713] py-16 px-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold text-white">Tunas<span className="text-[#EAB308]">.</span></span>
+          <div className="flex items-center gap-2">
+            {/* Logo melingkar di footer */}
+            <img 
+              src={LogoDaurin} 
+              alt="Logo" 
+              className="w-8 h-8 rounded-full object-cover" 
+            />
+            <div>
+              <span className="text-xl font-bold text-white">
+                Daurin<span className="text-orange-500">.</span>
+              </span>
+              <p className="text-white/30 text-xs font-medium tracking-wide">Aksi iklim untuk semua</p>
             </div>
-            <p className="text-white/30 text-xs font-medium tracking-wide">Aksi iklim untuk semua</p>
           </div>
           <div className="text-left md:text-right">
             <p className="text-white/30 text-[10px] uppercase tracking-widest font-bold mb-2">Brand Identity v1.0</p>
-            <p className="text-white/30 text-[10px] font-medium">© 2026 Tunas. Semua hak dilindungi.</p>
+            <p className="text-white/30 text-[10px] font-medium">© 2026 Daurin. Semua hak dilindungi.</p>
           </div>
         </div>
       </footer>

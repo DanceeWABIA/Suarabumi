@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// Impor logo sesuai dengan aset gambar melingkar yang Anda miliki
+import LogoDaurin from '../assets/Logo Daurin.jpeg';
 
 // Tambahkan prop onGoToRegister di sini
 const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
@@ -43,13 +45,20 @@ const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F5F0] font-sans">
+    <div className="min-h-screen bg-[#F5F5F0] font-sans text-left">
       
       {/* Navbar Simple */}
       <nav className="flex justify-between items-center px-10 py-6 bg-white/50 backdrop-blur-sm">
+        {/* Update Logo & Titik Oranye sesuai image_70c71e.png */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={onBack}>
-          <div className="w-8 h-8 bg-[#1A3022] rounded-full flex items-center justify-center text-white text-xs">🌱</div>
-          <span className="text-xl font-bold text-[#1A3022]">Tunas.</span>
+          <img 
+            src={LogoDaurin} 
+            alt="Logo" 
+            className="w-8 h-8 rounded-full object-cover shadow-sm" 
+          />
+          <span className="text-xl font-bold text-[#1A3022]">
+            Daurin<span className="text-orange-500">.</span>
+          </span>
         </div>
         <div className="hidden md:flex gap-8 text-xs font-bold text-gray-500 uppercase tracking-widest">
           <span onClick={() => navigateToSection('fitur')} className="cursor-pointer hover:text-[#1A3022] transition-colors">Fitur</span>
@@ -58,7 +67,6 @@ const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
         </div>
         <div className="flex gap-4">
           <button className="text-sm font-bold text-[#1A3022] px-6 py-2">Masuk</button>
-          {/* Tambahkan onClick untuk pindah ke Register */}
           <button 
             onClick={onGoToRegister}
             className="bg-[#1A3022] text-white text-sm font-bold px-8 py-2 rounded-full hover:opacity-90 transition-all"
@@ -82,29 +90,30 @@ const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
           <div className="lg:w-1/2 bg-[#1A3022] p-12 flex flex-col justify-center relative overflow-hidden">
             <div className="relative z-10">
               <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
-                <span className="text-3xl">🌱</span>
+                {/* Logo melingkar putih transparan untuk variasi dark mode area */}
+                <img src={LogoDaurin} alt="Icon" className="w-10 h-10 rounded-full opacity-80" />
               </div>
-              <h2 className="text-4xl font-bold text-white mb-4 font-serif">Bergabung dengan Tunas</h2>
-              <p className="text-white/60 text-sm mb-12">Mulai perjalanan aksi iklimmu bersama ribuan pengguna lain di seluruh Indonesia</p>
+              <h2 className="text-4xl font-bold text-white mb-4 font-serif text-left">Bergabung dengan Daurin</h2>
+              <p className="text-white/60 text-sm mb-12 text-left">Mulai perjalanan aksi iklimmu bersama ribuan pengguna lain di seluruh Indonesia</p>
               
               <div className="space-y-6">
                 <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
                   <span className="text-2xl">🎁</span>
-                  <div>
+                  <div className="text-left">
                     <h4 className="text-white text-sm font-bold">Reward Nyata</h4>
                     <p className="text-white/40 text-[10px]">Tukar poin ke GoPay, OVO, Dana</p>
                   </div>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
                   <span className="text-2xl">🌍</span>
-                  <div>
+                  <div className="text-left">
                     <h4 className="text-white text-sm font-bold">Dampak Terukur</h4>
                     <p className="text-white/40 text-[10px]">Lacak CO2 yang kamu selamatkan</p>
                   </div>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center gap-4">
                   <span className="text-2xl">🚀</span>
-                  <div>
+                  <div className="text-left">
                     <h4 className="text-white text-sm font-bold">Gratis Selamanya</h4>
                     <p className="text-white/40 text-[10px]">Tanpa biaya tersembunyi</p>
                   </div>
@@ -119,7 +128,7 @@ const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
             <h2 className="text-3xl font-bold text-[#1A3022] mb-10 text-center font-serif">Selamat Datang Kembali!</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+              <div className="text-left">
                 <label className="text-[10px] font-bold text-[#2D6A4F] uppercase tracking-widest block mb-2">Email</label>
                 <div className={`flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border transition-all ${errors.email ? 'border-red-500 bg-red-50' : 'border-transparent focus-within:border-[#2D6A4F]'}`}>
                   <span className="text-gray-400 text-lg">✉</span>
@@ -134,7 +143,7 @@ const LoginPage = ({ onBack, onLoginSuccess, onGoToRegister }) => {
                 {errors.email && <p className="text-red-500 text-[10px] mt-1 font-bold italic">{errors.email}</p>}
               </div>
 
-              <div>
+              <div className="text-left">
                 <label className="text-[10px] font-bold text-[#2D6A4F] uppercase tracking-widest block mb-2">Password</label>
                 <div className={`flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border transition-all ${errors.password ? 'border-red-500 bg-red-50' : 'border-transparent focus-within:border-[#2D6A4F]'}`}>
                   <span className="text-gray-400 text-lg">🔒</span>

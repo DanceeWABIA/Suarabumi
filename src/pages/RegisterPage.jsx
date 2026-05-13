@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// Pastikan path impor logo sesuai dengan struktur folder Anda
+import LogoDaurin from '../assets/Logo Daurin.jpeg'; 
 
 // TAMBAHKAN 'onContinue' di dalam props ini
 const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => { 
@@ -52,9 +54,16 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
     <div className="min-h-screen bg-[#F5F5F0] font-sans pb-20">
       {/* Navbar Minimalis */}
       <nav className="flex justify-between items-center px-10 py-6">
+        {/* Update Logo & Titik Oranye sesuai image_66d633.png */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={onBack}>
-          <div className="w-8 h-8 bg-[#1A3022] rounded-full flex items-center justify-center text-white text-xs">🌱</div>
-          <span className="text-xl font-bold text-[#1A3022]">Tunas.</span>
+          <img 
+            src={LogoDaurin} 
+            alt="Logo" 
+            className="w-8 h-8 rounded-full object-cover" 
+          />
+          <span className="text-xl font-bold text-[#1A3022]">
+            Daurin<span className="text-orange-500">.</span>
+          </span>
         </div>
         
         <div className="hidden md:flex gap-8 text-xs font-bold text-gray-500 uppercase tracking-widest">
@@ -99,7 +108,7 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
           <form onSubmit={handleSubmit} className="space-y-6">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div className="text-left">
                 <label className="text-xs font-bold text-[#1A3022] block mb-2">Nama Lengkap *</label>
                 <div className="flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border border-transparent focus-within:border-[#2D6A4F] transition-all">
                   <span className="text-gray-400">👤</span>
@@ -108,9 +117,9 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
                     onChange={(e) => setFormData({...formData, nama: e.target.value})}
                   />
                 </div>
-                {errors.nama && <p className="text-red-500 text-[10px] mt-1">{errors.nama}</p>}
+                {errors.nama && <p className="text-red-500 text-[10px] mt-1 text-left">{errors.nama}</p>}
               </div>
-              <div>
+              <div className="text-left">
                 <label className="text-xs font-bold text-[#1A3022] block mb-2">Nomor Telepon *</label>
                 <div className="flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border border-transparent focus-within:border-[#2D6A4F] transition-all">
                   <span className="text-gray-400">📞</span>
@@ -119,11 +128,11 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
                     onChange={(e) => setFormData({...formData, telepon: e.target.value})}
                   />
                 </div>
-                {errors.telepon && <p className="text-red-500 text-[10px] mt-1">{errors.telepon}</p>}
+                {errors.telepon && <p className="text-red-500 text-[10px] mt-1 text-left">{errors.telepon}</p>}
               </div>
             </div>
 
-            <div>
+            <div className="text-left">
               <label className="text-xs font-bold text-[#1A3022] block mb-2">Email *</label>
               <div className="flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border border-transparent focus-within:border-[#2D6A4F] transition-all">
                 <span className="text-gray-400">✉</span>
@@ -132,11 +141,11 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
               </div>
-              {errors.email && <p className="text-red-500 text-[10px] mt-1">{errors.email}</p>}
+              {errors.email && <p className="text-red-500 text-[10px] mt-1 text-left">{errors.email}</p>}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div className="text-left">
                 <label className="text-xs font-bold text-[#1A3022] block mb-2">Password *</label>
                 <div className="flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border border-transparent focus-within:border-[#2D6A4F] transition-all">
                   <span className="text-gray-400">🔒</span>
@@ -145,9 +154,9 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
                     onChange={(e) => setFormData({...formData, password: e.target.value})}
                   />
                 </div>
-                {errors.password && <p className="text-red-500 text-[10px] mt-1">{errors.password}</p>}
+                {errors.password && <p className="text-red-500 text-[10px] mt-1 text-left">{errors.password}</p>}
               </div>
-              <div>
+              <div className="text-left">
                 <label className="text-xs font-bold text-[#1A3022] block mb-2">Konfirmasi Password *</label>
                 <div className="flex items-center gap-3 bg-[#F5F5F0] px-4 py-4 rounded-xl border border-transparent focus-within:border-[#2D6A4F] transition-all">
                   <span className="text-gray-400">🔒</span>
@@ -156,7 +165,7 @@ const RegisterPage = ({ onBack, onGoToLogin, onContinue }) => {
                     onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
                   />
                 </div>
-                {errors.confirmPassword && <p className="text-red-500 text-[10px] mt-1">{errors.confirmPassword}</p>}
+                {errors.confirmPassword && <p className="text-red-500 text-[10px] mt-1 text-left">{errors.confirmPassword}</p>}
               </div>
             </div>
 

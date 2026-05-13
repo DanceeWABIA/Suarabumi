@@ -41,7 +41,7 @@ const OTPPage = ({ onBack, onVerifySuccess, phoneNumber = "+62 812-3456-789" }) 
       <nav className="flex justify-between items-center px-10 py-6">
         <div className="flex items-center gap-2 cursor-pointer" onClick={onBack}>
           <div className="w-8 h-8 bg-[#1A3022] rounded-full flex items-center justify-center text-white text-xs">🌱</div>
-          <span className="text-xl font-bold text-[#1A3022]">Tunas.</span>
+          <span className="text-xl font-bold text-[#1A3022]">Daurin.</span>
         </div>
         
         <div className="hidden md:flex gap-8 text-xs font-bold text-gray-500 uppercase tracking-widest">
